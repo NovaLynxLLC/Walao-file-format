@@ -218,6 +218,63 @@ if __name__ == "__main__":
 
 Thats the end of the ide! Just like that, you can now test it out! Remember, refer to `common walaos` if you need help! (Hit F5 to run the project!)
 
+# How to convert the .walao file to a more useful file format (like a .txt)
+
+More code :(. Its very easy. Just a few chunks of code!
+
+First initialize:
+```python
+import tkinter as tk
+from tkinter import filedialog, messagebox
+import os
+```
+
+Only one define!!! Here:
+```python
+def convert_walao_to_txt():
+    file_path = filedialog.askopenfilename(
+        title="Select a .walao file",
+        filetypes=[("WALAO Files", "*.walao")]
+    )
+
+    if not file_path:
+        return  # User cancelled
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as walao_file:
+            content = walao_file.read()
+
+        new_file_path = os.path.splitext(file_path)[0] + ".txt"
+
+        with open(new_file_path, "w", encoding="utf-8") as txt_file:
+            txt_file.write(content)
+
+        messagebox.showinfo("Success", f"File converted:\n{new_file_path}")
+    except Exception as e:
+        messagebox.showerror("Error", f"Failed to convert file:\n{str(e)}")
+```
+
+Last bit:
+
+```python
+# --- Tkinter GUI ---
+root = tk.Tk()
+root.title(".Walao to .txt")
+root.geometry("300x150")
+root.resizable(False, False)
+
+label = tk.Label(root, text=".Walao to .txt Converter", font=("Arial", 14))
+label.pack(pady=10)
+
+convert_button = tk.Button(root, text="Select .walao File", command=convert_walao_to_txt)
+convert_button.pack(pady=20)
+
+root.mainloop()
+```
+
+Done! Try it out!
+
+
 # Common Walaos
 
 Nice Joke huh? Whatever. So, most likely, it would be a bug in the ide, or you implemented something wrong. Its ok though. Everyone makes mistakes. Just follow the `Setting up the IDE` once again, but now with caution. If theres still a bug, email it to me along with a screenshot. This will stay like this for now.
