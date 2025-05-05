@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>.walao Format</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: linear-gradient(to bottom, #0f0c29 0%, #302b63 70%, #1f1c2c 100%);
+      animation: fadeInDown 1.2s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 4em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .btn-github {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      background: #6e48aa;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn-github:hover {
+      background: #8e5bd4;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: translateY(1px);
+    }
+
+    .wave svg {
+      position: relative;
+      display: block;
+      width: calc(135% + 1.3px);
+      height: 100px;
+    }
+
+    .wave .shape-fill {
+      fill: #1f1c2c;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 80px 20px;
+      background: #1f1c2c;
+      gap: 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .card {
+      background: #2c2f48;
+      padding: 25px;
+      border-radius: 12px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 1s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.6em;
+      color: #ffd166;
+    }
+
+    .card p {
+      color: #cfd8dc;
+    }
+
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #1f1c2c;
+    }
+
+    .section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 1.1em;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #111;
+      color: #888;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>.walao Format</h1>
+    <p>A clean, structured, human-readable custom text format for scripting, metadata, and data serialization.</p>
+    <a href="https://github.com/LightingDev/Walao-file-format" class="btn-github" target="_blank">🌐 View on GitHub</a>
+    <div class="wave">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+        <path d="M0.00,49.98 C150.00,150.00 349.84,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </header>
+
+  <section class="features">
+    <div class="card">
+      <h2>🌱 Human-Friendly</h2>
+      <p>.walao files are easy to read, write, and parse manually or programmatically.</p>
+    </div>
+    <div class="card">
+      <h2>🚀 Lightweight</h2>
+      <p>No overhead. Just pure text. Ideal for config files, scripts, or message formats.</p>
+    </div>
+    <div class="card">
+      <h2>🛠 Tool Support</h2>
+      <p>Supported by multiple tools like “.Walao to .txt” for seamless conversion.</p>
+    </div>
+    <div class="card">
+      <h2>📦 Structured Layout</h2>
+      <p>Supports sections, key-value pairs, commands, and metadata blocks.</p>
+    </div>
+    <div class="card">
+      <h2>🧩 Extendable</h2>
+      <p>Add your own custom commands or interpret logic with simple rules.</p>
+    </div>
+    <div class="card">
+      <h2>🔒 Minimal Errors</h2>
+      <p>Syntax rules prevent ambiguity and encourage clean formatting.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🔍 What Does a .walao File Look Like?</h2>
+    <p>
+      <code>
+Hi Guys!
+Testing 1234
+Woah it works!
+try it out now!!!
+YAY
+      </code>
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>🎯 Why Use .walao?</h2>
+    <p>
+      Whether you're designing a game engine, scripting automation, or just want a human-readable format for structured data, `.walao` gives you the flexibility of JSON with the simplicity of plain text. Designed to be minimal and expandable, it’s a joy for both developers and non-technical users.
+    </p>
+  </section>
+
+  <footer>
+    Made with ❤️ by the .walao team • MIT License
+  </footer>
+
+</body>
+</html>
